@@ -1,14 +1,10 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import questionFormReducer from "./questionFormSlice";
 
-export const store = configureStore({
-  reducer: {},
+const rootReducer = combineReducers({
+  questionForm: questionFormReducer,
 });
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;
+export const store = configureStore({
+  reducer: rootReducer,
+});
