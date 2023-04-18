@@ -3,21 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { setQuestion } from "../store/questionFormSlice";
 
-type IQuestionINput = {
+type IQuestionInput = {
   questionInput: string;
 };
 
 export default function QuestionForm() {
   const dispatch = useDispatch();
-  //const formRef = useRef<HTMLFormElement>(null);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IQuestionINput>();
+  } = useForm<IQuestionInput>();
 
-  const handleOnSubmit = (data: IQuestionINput) => {
+  const handleOnSubmit = (data: IQuestionInput) => {
     const newQuestion = data.questionInput;
     dispatch(setQuestion(newQuestion));
   };
@@ -32,7 +31,9 @@ export default function QuestionForm() {
           {...register("questionInput", { required: true })}
           placeholder="type here"
         />
-        {errors.questionInput && <span> This field is required</span>}
+        {errors.questionInput && (
+          <span className="error"> This field is required</span>
+        )}
       </div>
       <button>Save</button>
     </form>

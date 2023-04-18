@@ -12,3 +12,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.error {
+  color: #ff0000;
+}
+
+.vote_section {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.results_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f0f8ff;
+  border-bottom: 2px solid #000;
+  height: 250px;
+}
+.results {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end;
+}
+
+.result {
+  text-align: center;
+  height: 5px;
+  width: 30%;
+  background: #ff0000;
+}

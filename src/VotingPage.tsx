@@ -1,24 +1,12 @@
 import React from "react";
 import { Question } from "./components/Question";
+import { OptionsList } from "./components/OptionsList";
+import { LetsVoteBlock } from "./components/LetsVoteBlock";
 
 export function VotingPage() {
   return (
-    <section>
-      <Question />
-      <div className="results_block">
-        <div className="result">result</div>
-        <div className="result">result</div>
-      </div>
-      <ul>
-        <li>
-          <input type="radio" />
-          <label>option 1 is here</label>
-        </li>
-        <li>
-          <input type="radio" />
-          <label>option 1 is here</label>
-        </li>
-      </ul>
+    <section className="vote_section">
+      <LetsVoteBlock />
     </section>
   );
 }
