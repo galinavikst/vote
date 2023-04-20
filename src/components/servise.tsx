@@ -1,3 +1,5 @@
+import { IOption } from "../store/optionsFormSlice";
+
 export function getRandomColor() {
   var letters = "0123456789ABCDEF";
   var color = "#";
@@ -7,7 +9,9 @@ export function getRandomColor() {
   return color;
 }
 
-export const calculatePercentage = (
-  totalVotes: number,
-  checkedNumber: number
-) => (checkedNumber / totalVotes) * 200;
+export const getHight = (totalCklicks: number, elementClicked: number) => {
+  if (!elementClicked) return "5px";
+  return Math.round((elementClicked / totalCklicks) * 200) + "px";
+};
+
+export const getWidth = (arr: IOption[]) => 80 / arr.length + "%";

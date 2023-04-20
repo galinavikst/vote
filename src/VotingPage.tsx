@@ -1,12 +1,19 @@
 import React from "react";
-import { Question } from "./components/Question";
-import { OptionsList } from "./components/OptionsList";
 import { LetsVoteBlock } from "./components/LetsVoteBlock";
+import { OptionsToVote } from "./components/OptionsToVote";
+import { isRedyToVote } from "./store/optionsListSlice";
+import { useSelector } from "react-redux";
 
 export function VotingPage() {
+  const letsVoteClicked = useSelector(isRedyToVote);
   return (
-    <section className="vote_section">
-      <LetsVoteBlock />
-    </section>
+    <>
+      {letsVoteClicked && (
+        <section className="vote_section">
+          <LetsVoteBlock />
+          <OptionsToVote />
+        </section>
+      )}
+    </>
   );
 }

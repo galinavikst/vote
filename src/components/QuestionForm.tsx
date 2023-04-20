@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-import { setQuestion } from "../store/questionFormSlice";
+import { inputQuestionValue, setQuestion } from "../store/questionFormSlice";
 
 type IQuestionInput = {
   questionInput: string;
@@ -9,6 +9,7 @@ type IQuestionInput = {
 
 export default function QuestionForm() {
   const dispatch = useDispatch();
+  const question = useSelector(inputQuestionValue);
 
   const {
     register,
@@ -22,20 +23,24 @@ export default function QuestionForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleOnSubmit)}>
-      <div>
-        <label htmlFor="questionInput">Create your question</label>
-        <input
-          id="questionInput"
-          type="text"
-          {...register("questionInput", { required: true })}
-          placeholder="type here"
-        />
-        {errors.questionInput && (
-          <span className="error"> This field is required</span>
-        )}
-      </div>
-      <button>Save</button>
-    </form>
+    <>
+      {!question && (
+        <form onSubmit={handleSubmit(handleOnSubmit)}>
+          <div>
+            <label htmlFor="questionInput">Create your question</label>
+            <input
+              id="questionInput"
+              type="text"
+              {...register("questionInput", { required: true })}
+              placeholder="type here"
+            />
+            {errors.questionInput && (
+              <span className="error"> This field is required</span>
+            )}
+          </div>
+          <button>Save</button>
+        </form>
+      )}
+    </>
   );
 }
