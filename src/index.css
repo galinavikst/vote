@@ -38,6 +38,23 @@ form {
   width: 50%;
 }
 
+input {
+  padding: 10px;
+  width: 50%;
+  min-width: 200px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+button {
+  padding: 10px 15px;
+  width: fit-content;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  min-width: 100px;
+  transition: all 150ms ease-in-out;
+}
+
 /*  */
 /* question form  */
 
@@ -57,21 +74,13 @@ form {
   gap: 5px;
 }
 
-button {
-  padding: 10px 15px;
-  width: fit-content;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  min-width: 100px;
-  transition: all 150ms ease-in-out;
-}
+/*  */
+/* options form  */
 
-input {
-  padding: 5px;
-  width: 50%;
-  min-width: 200px;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
+.options_form_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .options_form {
@@ -84,9 +93,23 @@ input {
 }
 
 .options_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   list-style: circle;
   padding: 20px;
 }
+
+.options_list li {
+  font-size: 17px;
+}
+
+.lets_vote_btn {
+  font-size: 17px;
+}
+
+/*  */
+/* vote section  */
 
 .vote_section {
   padding: 30px 0;
@@ -102,6 +125,10 @@ input {
   background-color: var(--bg-color);
   border-bottom: 2px solid var(--pure-black);
   height: 250px;
+}
+
+.results_block h2 {
+  text-align: center;
 }
 
 .results {
@@ -129,7 +156,7 @@ input {
 }
 
 .option_btn {
-  padding: 25px 35px;
+  padding: 30px 35px;
   color: var(--pure-white);
   font-weight: 700;
   font-size: xx-large;

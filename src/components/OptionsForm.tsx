@@ -3,10 +3,14 @@ import { Question } from "./Question";
 import { useDispatch, useSelector } from "react-redux";
 import { inputQuestionValue } from "../store/questionFormSlice";
 import { useForm } from "react-hook-form";
-import { options, setOptions } from "../store/optionsFormSlice";
+import {
+  isRedyToVote,
+  setReadyToVote,
+  options,
+  setOptions,
+} from "../store/optionsFormSlice";
 import { OptionsList } from "./OptionsList";
 import { getRandomColor } from "./servise";
-import { isRedyToVote } from "../store/optionsListSlice";
 
 type IOptionInput = {
   optionInput: string;
@@ -21,7 +25,7 @@ export default function OptionsForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm<IOptionInput>();
 
   // const inputs = [];
@@ -49,28 +53,42 @@ export default function OptionsForm() {
     dispatch(setOptions(newOption));
   };
 
+  const onClickHandler = () => {
+    dispatch(setReadyToVote(true));
+  };
+
   return (
     <>
       {question && !letsVoteClicked && (
-        <form className="options_form" onSubmit={handleSubmit(submitHandler)}>
+        <div className="options_form_wrapper">
           <Question />
-          <div className="input_label_wrapper">
-            <label htmlFor="optionInput">Create your options (min 2):</label>
-            <div className="input_btn_wrapper">
-              <input
-                id="optionInput"
-                type="text"
-                placeholder="type here"
-                {...register("optionInput", { required: true })}
-              />
-              <button disabled={optionsArr.length >= 5}>Save</button>
+          <form className="options_form" onSubmit={handleSubmit(submitHandler)}>
+            <div className="input_label_wrapper">
+              <label htmlFor="optionInput">Create your options (min 2):</label>
+              <div className="input_btn_wrapper">
+                <input
+                  id="optionInput"
+                  type="text"
+                  placeholder="type here"
+                  {...register("optionInput", { required: true })}
+                />
+                <button disabled={optionsArr.length >= 5}>Save</button>
+              </div>
             </div>
-            {/* {optionsArr.length < 2 && errors.optionInput && (
+          </form>
+          {/* {optionsArr.length < 2 && errors.optionInput && (
               <span className="error"> *Required at least 2 options</span>
             )} */}
-          </div>
           <OptionsList />
-        </form>
+          <button
+            className="lets_vote_btn"
+            type="button"
+            onClick={onClickHandler}
+            disabled={optionsArr.length < 2 && true}
+          >
+            Let's vote!
+          </button>
+        </div>
       )}
     </>
   );
