@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <QuestionForm />
       <OptionsForm />
-
       <VotingPage />
     </div>
   );

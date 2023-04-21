@@ -25,18 +25,20 @@ export default function QuestionForm() {
   return (
     <>
       {!question && (
-        <form onSubmit={handleSubmit(handleOnSubmit)}>
-          <div>
-            <label htmlFor="questionInput">Create your question</label>
-            <input
-              id="questionInput"
-              type="text"
-              {...register("questionInput", { required: true })}
-              placeholder="type here"
-            />
-            {errors.questionInput && (
-              <span className="error"> This field is required</span>
-            )}
+        <form className="question_form" onSubmit={handleSubmit(handleOnSubmit)}>
+          <div className="input_label_wrapper">
+            <label htmlFor="questionInput">Create your question:</label>
+            <div>
+              <input
+                id="questionInput"
+                type="text"
+                {...register("questionInput", { required: true })}
+                placeholder="type here"
+              />
+              {errors.questionInput && (
+                <span className="error"> *This field is required</span>
+              )}
+            </div>
           </div>
           <button>Save</button>
         </form>

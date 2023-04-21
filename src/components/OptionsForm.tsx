@@ -52,21 +52,23 @@ export default function OptionsForm() {
   return (
     <>
       {question && !letsVoteClicked && (
-        <form onSubmit={handleSubmit(submitHandler)}>
+        <form className="options_form" onSubmit={handleSubmit(submitHandler)}>
           <Question />
-          <div>
-            <label htmlFor="optionInput">Create your options (max 5)</label>
-            <input
-              id="optionInput"
-              type="text"
-              placeholder="type here"
-              {...register("optionInput", { required: true })}
-            />
-            {optionsArr.length < 2 && errors.optionInput && (
-              <span className="error"> Required at least 2 options</span>
-            )}
+          <div className="input_label_wrapper">
+            <label htmlFor="optionInput">Create your options (min 2):</label>
+            <div className="input_btn_wrapper">
+              <input
+                id="optionInput"
+                type="text"
+                placeholder="type here"
+                {...register("optionInput", { required: true })}
+              />
+              <button disabled={optionsArr.length >= 5}>Save</button>
+            </div>
+            {/* {optionsArr.length < 2 && errors.optionInput && (
+              <span className="error"> *Required at least 2 options</span>
+            )} */}
           </div>
-          <button disabled={optionsArr.length >= 5}>Save</button>
           <OptionsList />
         </form>
       )}
