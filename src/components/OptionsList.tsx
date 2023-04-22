@@ -19,7 +19,11 @@ export function OptionsList() {
             : { opacity: 0.3 }
         }
       >
-        {optionsArr[i] ? optionsArr[i].text : ""}
+        {optionsArr[i] ? (
+          <span className="option_text">{optionsArr[i].text}</span>
+        ) : (
+          "Your option"
+        )}
       </li>
     );
   }

@@ -101,7 +101,11 @@ button {
 }
 
 .options_list li {
-  font-size: 17px;
+  font-size: 20px;
+}
+
+.option_text {
+  color: var(--pure-black);
 }
 
 .lets_vote_btn {
