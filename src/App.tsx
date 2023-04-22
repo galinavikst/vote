@@ -1,16 +1,20 @@
 import React from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import QuestionForm from "./components/QuestionForm";
 import OptionsForm from "./components/OptionsForm";
 import { VotingPage } from "./VotingPage";
-import { OptionsList } from "./components/OptionsList";
 
 function App() {
   return (
-    <div className="App">
-      <QuestionForm />
-      <OptionsForm />
-      <VotingPage />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <QuestionForm />
+        <OptionsForm />
+        <Routes>
+          <Route path="/voting-page" element={<VotingPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

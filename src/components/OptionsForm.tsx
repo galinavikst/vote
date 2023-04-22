@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Question } from "./Question";
 import { useDispatch, useSelector } from "react-redux";
 import { inputQuestionValue } from "../store/questionFormSlice";
@@ -22,11 +23,7 @@ export default function OptionsForm() {
   const optionsArr = useSelector(options);
   const dispatch = useDispatch();
 
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm<IOptionInput>();
+  const { register, handleSubmit } = useForm<IOptionInput>();
 
   // const inputs = [];
   // for (let i = 0; i < 5; i += 1) {
@@ -76,18 +73,17 @@ export default function OptionsForm() {
               </div>
             </div>
           </form>
-          {/* {optionsArr.length < 2 && errors.optionInput && (
-              <span className="error"> *Required at least 2 options</span>
-            )} */}
           <OptionsList />
-          <button
-            className="lets_vote_btn"
-            type="button"
-            onClick={onClickHandler}
-            disabled={optionsArr.length < 2 && true}
-          >
-            Let's vote!
-          </button>
+          <Link to="/voting-page">
+            <button
+              className="lets_vote_btn"
+              type="button"
+              onClick={onClickHandler}
+              disabled={optionsArr.length < 2 && true}
+            >
+              Let's vote!
+            </button>
+          </Link>
         </div>
       )}
     </>
