@@ -6,6 +6,7 @@ import {
   updateTotalClicks,
 } from "../store/optionsFormSlice";
 import { getWidth } from "./servise";
+import { setShowPercentage } from "../store/letsVoteBlockSlice";
 
 export const OptionsToVote = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ export const OptionsToVote = () => {
   const onClickHandler = (index: number) => {
     dispatch(addClickedCount(index));
     dispatch(updateTotalClicks());
+    dispatch(setShowPercentage(false));
   };
 
   const list = optionsArr.map((el, index) => {
@@ -30,7 +32,7 @@ export const OptionsToVote = () => {
             background: el.color,
           }}
         >
-          {index + 1}
+          {el.clicked}
         </button>
         <p className="option_to_vote_text">{el.text}</p>
       </li>

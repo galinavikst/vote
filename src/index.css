@@ -167,10 +167,8 @@ button {
 /* vote section  */
 
 .vote_section {
-  padding: 30px 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .results_block {
@@ -179,7 +177,8 @@ button {
   justify-content: space-between;
   background-color: var(--bg-color);
   border-bottom: 2px solid var(--pure-black);
-  height: 250px;
+  height: 450px;
+  padding: 10px 0 0;
 }
 
 .results_block h2 {
@@ -193,10 +192,19 @@ button {
 }
 
 .result {
+  position: relative;
   text-align: center;
   height: 5px;
   width: 30%;
   background: var(--warning-red);
+}
+
+.percentage {
+  position: absolute;
+  top: -20px;
+  translate: -50% -50%;
+  font-size: 35px;
+  font-weight: 700;
 }
 
 .to_vote_list {
@@ -210,12 +218,13 @@ button {
 }
 
 .option_btn {
-  padding: 30px 35px;
+  padding: 15px;
+  margin: 15px;
   color: var(--pure-white);
   font-weight: 700;
   font-size: xx-large;
   border: none;
-  border-radius: 50%;
+  border-radius: 15px;
   transition: all 140ms ease-in-out;
 }
 
