@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Question } from "./Question";
 import { useDispatch, useSelector } from "react-redux";
-import { inputQuestionValue } from "../store/questionFormSlice";
+import { inputQuestionValue, setQuestion } from "../store/questionFormSlice";
 import { useForm } from "react-hook-form";
 import {
   isRedyToVote,
@@ -54,11 +54,20 @@ export default function OptionsForm() {
     dispatch(setReadyToVote(true));
   };
 
+  const handleDeleteBtn = () => {
+    dispatch(setQuestion(""));
+  };
+
   return (
     <>
       {question && !letsVoteClicked && (
         <div className="options_form_wrapper">
-          <Question />
+          <div className="question_delete_btn_wrapper">
+            <Question />
+            <button className="delete_btn" onClick={handleDeleteBtn}>
+              X
+            </button>
+          </div>
           <form className="options_form" onSubmit={handleSubmit(submitHandler)}>
             <div className="input_label_wrapper">
               <label htmlFor="optionInput">Create your options (min 2):</label>

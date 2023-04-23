@@ -28,6 +28,11 @@ const optionsFormSlice = createSlice({
     setOptions(state, action) {
       state.options = [...state.options, action.payload];
     },
+    deleteOption: (state, action) => {
+      state.options = state.options.filter(
+        (_el, index) => index !== action.payload
+      );
+    },
     addClickedCount(state, action) {
       const index = action.payload;
       state.options[index].clicked += 1;
@@ -48,6 +53,7 @@ export const {
   setReadyToVote,
   addClickedCount,
   updateTotalClicks,
+  deleteOption,
 } = optionsFormSlice.actions;
 export const options = (state: IOptionsFormSlice) => state.optionsForm.options;
 export const total = (state: IOptionsFormSlice) =>

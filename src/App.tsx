@@ -8,13 +8,21 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <QuestionForm />
-        <OptionsForm />
         <Routes>
+          <Route path="/" element={<CreateVotingPage />} />
           <Route path="/voting-page" element={<VotingPage />} />
         </Routes>
       </div>
     </BrowserRouter>
+  );
+}
+
+function CreateVotingPage() {
+  return (
+    <>
+      <QuestionForm />
+      <OptionsForm />
+    </>
   );
 }
 

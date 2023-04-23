@@ -5,12 +5,18 @@
   --border-color: #6f6c7a;
   --bg-color: #f0f8ff;
   --border-radius: 4px;
+  --main-bg-gradient: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(240, 248, 255, 1) 25%
+  );
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -39,11 +45,17 @@ form {
 }
 
 input {
-  padding: 10px;
+  padding: 5px;
+  font-size: 17px;
   width: 50%;
   min-width: 200px;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 30px var(--bg-color) inset; /* change to desired background color */
+  -webkit-text-fill-color: black !important; /* change to desired text color */
 }
 
 button {
@@ -87,6 +99,26 @@ button {
   gap: 20px;
 }
 
+.question_delete_btn_wrapper {
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.delete_btn {
+  padding: 5px;
+  width: fit-content;
+  min-width: 0px;
+  border: none;
+  background: transparent;
+}
+
+.delete_btn:hover {
+  cursor: pointer;
+  scale: 1.5;
+}
+
 .input_btn_wrapper {
   display: flex;
   gap: 5px;
@@ -96,12 +128,31 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  list-style: circle;
-  padding: 20px;
+}
+
+.options_list li::marker {
+  content: "";
+}
+
+.options_list li::before {
+  content: "•"; /* set the marker to a bullet point */
+  position: absolute;
+  left: 5px;
+  top: -6px;
+  font-size: 35px;
 }
 
 .options_list li {
+  position: relative;
   font-size: 20px;
+  padding: 5px 5px 5px 25px;
+  border-radius: 4px;
+  background: var(--main-bg-gradient);
+}
+
+.options_list li span {
+  display: flex;
+  justify-content: space-between;
 }
 
 .option_text {
@@ -152,7 +203,6 @@ button {
   display: flex;
   justify-content: space-evenly;
   gap: 10px;
-  list-style: none;
 }
 
 .option_to_vote_item {
