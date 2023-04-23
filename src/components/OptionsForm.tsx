@@ -18,26 +18,12 @@ type IOptionInput = {
 };
 
 export default function OptionsForm() {
+  const dispatch = useDispatch();
   const question = useSelector(inputQuestionValue);
   const letsVoteClicked = useSelector(isRedyToVote);
   const optionsArr = useSelector(options);
-  const dispatch = useDispatch();
 
-  const { register, handleSubmit } = useForm<IOptionInput>();
-
-  // const inputs = [];
-  // for (let i = 0; i < 5; i += 1) {
-  //   const isRequired = i < 2;
-  //   inputs.push(
-  //     <li key={i}>
-  //       <input
-  //         type="text"
-  //         {...register(`options${i}`, { required: isRequired })}
-  //       />
-  //       {errors.options && <span> This field is required</span>}
-  //     </li>
-  //   );
-  // }
+  const { register, handleSubmit, resetField } = useForm<IOptionInput>();
 
   const submitHandler = (data: IOptionInput) => {
     const newOption = {
@@ -46,14 +32,14 @@ export default function OptionsForm() {
       color: getRandomColor(),
       clicked: 0,
     };
-
     dispatch(setOptions(newOption));
+    //reset input after submiting
+    resetField("optionInput");
   };
 
   const onClickHandler = () => {
     dispatch(setReadyToVote(true));
   };
-
   const handleDeleteBtn = () => {
     dispatch(setQuestion(""));
   };
