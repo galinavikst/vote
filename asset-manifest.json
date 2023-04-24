@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/galinavikst/static/css/main.6ec0b360.css",
+    "main.js": "/galinavikst/static/js/main.5e36f8fb.js",
+    "index.html": "/galinavikst/index.html",
+    "main.6ec0b360.css.map": "/galinavikst/static/css/main.6ec0b360.css.map",
+    "main.5e36f8fb.js.map": "/galinavikst/static/js/main.5e36f8fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ec0b360.css",
+    "static/js/main.5e36f8fb.js"
+  ]
+}
