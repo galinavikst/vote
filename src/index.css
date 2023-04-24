@@ -20,7 +20,7 @@
 }
 
 body {
-  padding: 80px;
+  padding: 40px 80px 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -47,7 +47,7 @@ form {
 input {
   padding: 5px;
   font-size: 17px;
-  width: 50%;
+  width: 80%;
   min-width: 200px;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
@@ -67,11 +67,27 @@ button {
   transition: all 150ms ease-in-out;
 }
 
+.app_wrapper {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.lf-player-container {
+  width: 50%;
+}
+
+.player_pencil {
+  width: 100%;
+}
+
 /*  */
 /* question form  */
 
 .question_form {
   gap: 80px;
+  width: 50%;
 }
 
 .question_form .input_label_wrapper {
@@ -93,6 +109,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  width: 50%;
 }
 
 .options_form {
@@ -169,6 +186,8 @@ button {
 .vote_section {
   display: flex;
   flex-direction: column;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .results_block {
@@ -212,9 +231,11 @@ button {
   justify-content: space-evenly;
   gap: 10px;
 }
-
 .option_to_vote_item {
   text-align: center;
+}
+.option_to_vote_text {
+  font-size: 20px;
 }
 
 .option_btn {
@@ -227,18 +248,12 @@ button {
   border-radius: 15px;
   transition: all 140ms ease-in-out;
 }
-
 .option_btn:hover,
 .option_btn:focus {
   box-shadow: 0px 3px 9px -4px var(--border-color);
   scale: 1.1;
   cursor: pointer;
 }
-
 .option_btn:active {
   scale: 1;
-}
-
-.option_to_vote_text {
-  font-size: 20px;
 }

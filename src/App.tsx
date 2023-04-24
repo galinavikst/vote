@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import QuestionForm from "./components/QuestionForm";
 import OptionsForm from "./components/OptionsForm";
 import { VotingPage } from "./VotingPage";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 function App() {
   return (
@@ -19,10 +20,18 @@ function App() {
 
 function CreateVotingPage() {
   return (
-    <>
-      <QuestionForm />
-      <OptionsForm />
-    </>
+    <div className="app_wrapper">
+      <>
+        <QuestionForm />
+        <OptionsForm />
+      </>
+      <Player
+        src="https://assets5.lottiefiles.com/packages/lf20_sostbrzv.json"
+        className="player_pencil"
+        autoplay
+        loop
+      />
+    </div>
   );
 }
 
