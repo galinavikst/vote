@@ -11,7 +11,9 @@ export function VotingPage() {
     <>
       {letsVoteClicked && (
         <section className="vote_section">
-          <p>{totalVotes} people have voted in this poll</p>
+          <p className="total_votes">
+            {totalVotes} people have voted in this poll
+          </p>
           <LetsVoteBlock />
           <OptionsToVote />
         </section>

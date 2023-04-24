@@ -10,7 +10,6 @@ export function LetsVoteBlock() {
   const optionsArr = useSelector(options);
   const totalClick = useSelector(total);
   const toShowPercentage = useSelector(isPercentage);
-  console.log(toShowPercentage);
 
   useEffect(() => {
     setTimeout(() => {

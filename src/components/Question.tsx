@@ -4,6 +4,5 @@ import { useSelector } from "react-redux";
 
 export function Question() {
   const question = useSelector(inputQuestionValue);
-
   return <h2>{question}</h2>;
 }

@@ -64,7 +64,12 @@ export default function OptionsForm() {
                   placeholder="type here"
                   {...register("optionInput", { required: true })}
                 />
-                <button disabled={optionsArr.length >= 5}>Save</button>
+                <button
+                  className="save_button"
+                  disabled={optionsArr.length >= 5}
+                >
+                  Save
+                </button>
               </div>
             </div>
           </form>

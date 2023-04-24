@@ -28,7 +28,7 @@ export default function QuestionForm() {
         <form className="question_form" onSubmit={handleSubmit(handleOnSubmit)}>
           <div className="input_label_wrapper">
             <label htmlFor="questionInput">Create your question:</label>
-            <div>
+            <div className="input_btn_wrapper">
               <input
                 id="questionInput"
                 type="text"
@@ -38,9 +38,9 @@ export default function QuestionForm() {
               {errors.questionInput && (
                 <span className="error"> *This field is required</span>
               )}
+              <button className="save_button">Save</button>
             </div>
           </div>
-          <button>Save</button>
         </form>
       )}
     </>
