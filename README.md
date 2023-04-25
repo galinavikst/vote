@@ -1,5 +1,5 @@
 # Voting App
-This is a web application built with React, Redux Toolkit and CSS. It allows users to create questions with multiple answer options and conduct voting on them. The results of the voting are dynamically calculated and displayed in the form of voting count and percentage.
+This is a web application built with React, Redux Toolkit, TypeScript and CSS. It allows users to create questions with multiple answer options and conduct voting on them. The results of the voting are dynamically calculated and displayed in the form of voting count and percentage.
 
 The app also includes form validation and uses React Router for navigation.
 
@@ -21,8 +21,10 @@ The results of the voting will be displayed on the same page, showing the total 
 
 ## Following technologies:
 - React
-- Redux Toolkit
-- CSS
 - React Router
+- Redux Toolkit
+- TypeScript
+- CSS
+
 
 This application was built as a project for *Microsoft Reactor Web Development course / Microsoft.*
