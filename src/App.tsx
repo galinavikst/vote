@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/galinavikst" element={<CreateVotingPage />} />
+          <Route path="/vote" element={<CreateVotingPage />} />
           <Route path="/voting-page" element={<VotingPage />} />
         </Routes>
       </div>
