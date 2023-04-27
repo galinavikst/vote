@@ -5,7 +5,6 @@ import {
   options,
   updateTotalClicks,
 } from "../store/optionsFormSlice";
-import { getWidth } from "./servise";
 import { setShowPercentage } from "../store/letsVoteBlockSlice";
 
 export const OptionsToVote = () => {
@@ -20,11 +19,7 @@ export const OptionsToVote = () => {
 
   const list = optionsArr.map((el, index) => {
     return (
-      <li
-        style={{ width: getWidth(optionsArr) }}
-        className="option_to_vote_item"
-        key={index}
-      >
+      <li className="option_to_vote_item" key={index}>
         <button
           onClick={() => onClickHandler(index)}
           className="option_btn"
@@ -32,9 +27,8 @@ export const OptionsToVote = () => {
             background: el.color,
           }}
         >
-          {el.clicked}
+          {el.text}
         </button>
-        <p className="option_to_vote_text">{el.text}</p>
       </li>
     );
   });

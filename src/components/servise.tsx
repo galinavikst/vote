@@ -16,7 +16,7 @@ export const getHight = (totalCklicks: number, elementClicked: number) => {
   return Math.round((elementClicked / totalCklicks) * VoteBlockHeight);
 };
 
-export const getWidth = (arr: IOption[]) => 80 / arr.length + "%";
+export const getWidth = (arr: IOption[]) => 85 / arr.length + "%";
 
 export const getPercentage = (height: number) => {
   if (height === 5) return 0;
