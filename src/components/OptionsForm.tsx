@@ -68,7 +68,7 @@ export default function OptionsForm() {
                   className="save_button"
                   disabled={optionsArr.length >= 5}
                 >
-                  Save
+                  SAVE
                 </button>
               </div>
             </div>

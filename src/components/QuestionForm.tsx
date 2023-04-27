@@ -38,7 +38,7 @@ export default function QuestionForm() {
               {errors.questionInput && (
                 <span className="error"> *This field is required</span>
               )}
-              <button className="save_button">Save</button>
+              <button className="save_button">SAVE</button>
             </div>
           </div>
         </form>

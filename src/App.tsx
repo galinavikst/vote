@@ -8,12 +8,10 @@ import { Player } from "@lottiefiles/react-lottie-player";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/vote" element={<CreateVotingPage />} />
-          <Route path="/voting-page" element={<VotingPage />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/vote" element={<CreateVotingPage />} />
+        <Route path="/voting-page" element={<VotingPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }
