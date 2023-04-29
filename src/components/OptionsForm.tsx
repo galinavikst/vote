@@ -1,4 +1,5 @@
 import React from "react";
+import "animate.css";
 import { Link } from "react-router-dom";
 import { Question } from "./Question";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,7 +34,6 @@ export default function OptionsForm() {
       clicked: 0,
     };
     dispatch(setOptions(newOption));
-
     resetField("optionInput"); //reset input after submiting
   };
 

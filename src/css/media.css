@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+  body {
+    padding: 0 40px;
+  }
+  .options_form_wrapper,
+  .question_form {
+    width: 70%;
+  }
+  .results_block {
+    height: 450px;
+  }
+}
+
+@media (max-width: 426px) {
+  body {
+    padding: 0 12px;
+  }
+
+  .error {
+    top: -18px;
+    right: 0;
+  }
+
+  .app_wrapper,
+  .input_btn_wrapper {
+    flex-direction: column;
+  }
+
+  .app_wrapper {
+    padding: 40px 0 0;
+  }
+  .options_form_wrapper,
+  .question_form,
+  .lf-player-container {
+    width: 100%;
+  }
+  .options_form_wrapper a {
+    text-align: center;
+  }
+
+  .results_block {
+    height: 430px;
+  }
+
+  .total_votes {
+    font-size: 12px;
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "animate.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import QuestionForm from "./components/QuestionForm";
 import OptionsForm from "./components/OptionsForm";
@@ -25,7 +26,7 @@ function CreateVotingPage() {
       </>
       <Player
         src="https://assets5.lottiefiles.com/packages/lf20_sostbrzv.json"
-        className="player_pencil"
+        className="player_pencil animate__animated animate__backInDown"
         autoplay
         loop
       />

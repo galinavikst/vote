@@ -1,0 +1,83 @@
+/*  */
+/* options form  */
+
+.options_form_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 50%;
+}
+
+.options_form {
+  gap: 20px;
+}
+
+.question_delete_btn_wrapper {
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--main-bg-gradient);
+}
+
+.delete_btn {
+  padding: 0 5px;
+  width: fit-content;
+  min-width: 20px;
+  border: none;
+  background: transparent;
+}
+.delete_btn:hover {
+  scale: 1.5;
+}
+
+.options_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.options_list li::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  top: -6px;
+  font-size: 35px;
+}
+
+.options_list li {
+  position: relative;
+  font-size: 17px;
+  padding: 5px 5px 5px 25px;
+  border-radius: 4px;
+  background: var(--main-bg-gradient);
+}
+
+.options_list li span {
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.option_text {
+  color: var(--pure-black);
+}
+
+.lets_vote_btn {
+  font-size: 17px;
+  background: var(--accent-gradient);
+  color: var(--pure-white);
+  text-shadow: var(--main-text-shadow);
+  border: 1px solid var(--light-border-color);
+  text-transform: uppercase;
+}
+.lets_vote_btn:disabled {
+  color: var(--border-color);
+  text-shadow: none;
+  background: var(--main-bg-gradient);
+  opacity: 0.5;
+  text-transform: none;
+}
+.lets_vote_btn:hover {
+  opacity: 0.9;
+}

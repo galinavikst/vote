@@ -22,7 +22,7 @@ export function OptionsList() {
                 opacity: 1,
                 color: optionsArr[index].color,
               }
-            : { opacity: 0.3 }
+            : { opacity: 0.2 }
         }
       >
         {optionsArr[index] ? (
