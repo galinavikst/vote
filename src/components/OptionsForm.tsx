@@ -33,8 +33,8 @@ export default function OptionsForm() {
       clicked: 0,
     };
     dispatch(setOptions(newOption));
-    //reset input after submiting
-    resetField("optionInput");
+
+    resetField("optionInput"); //reset input after submiting
   };
 
   const onClickHandler = () => {
@@ -62,7 +62,11 @@ export default function OptionsForm() {
                   id="optionInput"
                   type="text"
                   placeholder="type here"
-                  {...register("optionInput", { required: true })}
+                  {...register("optionInput", {
+                    required: true,
+                    pattern: /^[^\s].*[^\s]$/, // no spaces in the end and begining
+                    maxLength: 100,
+                  })}
                 />
                 <button
                   className="save_button"

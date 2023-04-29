@@ -32,7 +32,11 @@ export default function QuestionForm() {
               <input
                 id="questionInput"
                 type="text"
-                {...register("questionInput", { required: true })}
+                {...register("questionInput", {
+                  required: true,
+                  pattern: /^[^\s].*[^\s]$/, // no spaces in the end and begining
+                  maxLength: 100,
+                })}
                 placeholder="type here"
               />
               {errors.questionInput && (

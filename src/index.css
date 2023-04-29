@@ -50,6 +50,7 @@ h2 {
 
 .error {
   position: absolute;
+  font-size: 12px;
   bottom: -24px;
   color: var(--warning-red);
 }
@@ -155,7 +156,6 @@ button:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .delete_btn {
@@ -327,6 +327,11 @@ button:active {
 @media (max-width: 426px) {
   body {
     padding: 0 12px;
+  }
+
+  .error {
+    top: -18px;
+    right: 0;
   }
 
   .app_wrapper,
