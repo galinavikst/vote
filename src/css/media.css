@@ -6,9 +6,6 @@
   .question_form {
     width: 70%;
   }
-  .results_block {
-    height: 450px;
-  }
 }
 
 @media (max-width: 426px) {
@@ -36,10 +33,6 @@
   }
   .options_form_wrapper a {
     text-align: center;
-  }
-
-  .results_block {
-    height: 430px;
   }
 
   .total_votes {

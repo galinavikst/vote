@@ -34,14 +34,20 @@ export default function QuestionForm() {
                 id="questionInput"
                 type="text"
                 {...register("questionInput", {
-                  required: true,
-                  pattern: /^[^\s].*[^\s]$/, // no spaces in the end and begining
-                  maxLength: 100,
+                  required: { value: true, message: "*This field is required" },
+                  pattern: {
+                    value: /^[^\s].*/, // no spaces in the beginning
+                    message: "*This field is required",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "*Create a question",
+                  },
                 })}
                 placeholder="type here"
               />
               {errors.questionInput && (
-                <span className="error"> *This field is required</span>
+                <span className="error">{errors.questionInput.message}</span>
               )}
               <button className="save_button">SAVE</button>
             </div>

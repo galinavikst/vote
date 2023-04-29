@@ -64,7 +64,7 @@ export default function OptionsForm() {
                   placeholder="type here"
                   {...register("optionInput", {
                     required: true,
-                    pattern: /^[^\s].*[^\s]$/, // no spaces in the end and begining
+                    pattern: /^[^\s].*/, // no spaces in the begining
                     maxLength: 100,
                   })}
                 />
