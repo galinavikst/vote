@@ -21,14 +21,13 @@ export function LetsVoteBlock() {
     const height = getHight(totalClick, el.clicked);
     return (
       <div
+        className="result"
         key={index}
         style={{
           width: getWidth(optionsArr),
           background: el.color,
           height: height + "px",
-          transition: "height 1s ease-in-out",
         }}
-        className="result"
       >
         {toShowPercentage && (
           <span className="percentage">{getPercentage(height) + "%"}</span>

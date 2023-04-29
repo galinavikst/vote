@@ -31,9 +31,7 @@
 .result {
   position: relative;
   text-align: center;
-  height: 5px;
-  width: 30%;
-  background: var(--warning-red);
+  transition: all 1s ease-in-out;
 }
 
 .percentage {
