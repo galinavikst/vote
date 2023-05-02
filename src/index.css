@@ -15,12 +15,9 @@
     rgb(250, 250, 250) 0%,
     rgb(225, 234, 238) 90%
   );
-  --accent-gradient: linear-gradient(
-    180deg,
-    rgba(255, 241, 171, 1) 0%,
-    rgba(131, 193, 125, 1) 100%
-  );
+  --accent-gradient: linear-gradient(180deg, #fff1ab 0%, #83c17d 100%);
   --main-text-shadow: 1px 1px #6f6c7a, 0px 0px #6f6c7a, 1px 2px #6f6c7a;
+  --main-accent-color: #83c17d;
 }
 
 * {

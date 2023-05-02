@@ -1,7 +1,13 @@
 import React from "react";
-import { deleteOption, options } from "../store/optionsFormSlice";
+import {
+  deleteOption,
+  options,
+  setInputValue,
+} from "../store/optionsFormSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { inputQuestionValue } from "../store/questionFormSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 export function OptionsList() {
   const dispatch = useDispatch();
@@ -10,6 +16,11 @@ export function OptionsList() {
 
   const handleDeleteBtn = (index: number) => {
     dispatch(deleteOption(index));
+  };
+
+  const handltEditBtn = (index: number, text: string) => {
+    dispatch(setInputValue(text));
+    handleDeleteBtn(index);
   };
 
   const list = Array.from({ length: 5 }).map((_el, index) => {
@@ -28,12 +39,20 @@ export function OptionsList() {
         {optionsArr[index] ? (
           <span>
             <span className="option_text">{optionsArr[index].text}</span>
-            <button
-              className="delete_btn"
-              onClick={() => handleDeleteBtn(index)}
-            >
-              X
-            </button>
+            <div className="icons_wrapper">
+              <FontAwesomeIcon
+                icon={faPenToSquare}
+                size="xs"
+                className="delete_edit_icons"
+                onClick={() => handltEditBtn(index, optionsArr[index].text)}
+              />
+              <FontAwesomeIcon
+                icon={faTrashCan}
+                size="xs"
+                className="delete_edit_icons"
+                onClick={() => handleDeleteBtn(index)}
+              />
+            </div>
           </span>
         ) : (
           "Your option"

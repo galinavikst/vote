@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "animate.css";
 import { Link } from "react-router-dom";
 import { Question } from "./Question";
@@ -10,9 +10,14 @@ import {
   setReadyToVote,
   options,
   setOptions,
+  deleteAllOptions,
+  inputOptionValue,
+  setInputValue,
 } from "../store/optionsFormSlice";
 import { OptionsList } from "./OptionsList";
 import { getRandomColor } from "./servise";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 type IOptionInput = {
   optionInput: string;
@@ -23,8 +28,15 @@ export default function OptionsForm() {
   const question = useSelector(inputQuestionValue);
   const letsVoteClicked = useSelector(isRedyToVote);
   const optionsArr = useSelector(options);
+  const inputValue = useSelector(inputOptionValue);
 
-  const { register, handleSubmit, resetField } = useForm<IOptionInput>();
+  const { register, handleSubmit, resetField, setValue, setFocus } =
+    useForm<IOptionInput>();
+
+  useEffect(() => {
+    setValue("optionInput", inputValue);
+    setFocus("optionInput");
+  }, [inputValue, setValue, setFocus]);
 
   const submitHandler = (data: IOptionInput) => {
     const newOption = {
@@ -40,19 +52,37 @@ export default function OptionsForm() {
   const onClickHandler = () => {
     dispatch(setReadyToVote(true));
   };
-  const handleDeleteBtn = () => {
+
+  const handleEditBtn = () => {
     dispatch(setQuestion(""));
+  };
+
+  const handleDeleteBtn = () => {
+    dispatch(deleteAllOptions());
+    dispatch(setInputValue(""));
+    handleEditBtn();
   };
 
   return (
     <>
       {question && !letsVoteClicked && (
         <div className="options_form_wrapper">
-          <div className="question_delete_btn_wrapper">
+          <div className="question_icons_wrapper">
             <Question />
-            <button className="delete_btn" onClick={handleDeleteBtn}>
-              X
-            </button>
+            <div className="icons_wrapper">
+              <FontAwesomeIcon
+                icon={faPenToSquare}
+                size="xs"
+                onClick={handleEditBtn}
+                className="delete_edit_icons"
+              />
+              <FontAwesomeIcon
+                className="delete_edit_icons"
+                icon={faTrashCan}
+                size="xs"
+                onClick={handleDeleteBtn}
+              />
+            </div>
           </div>
           <form className="options_form" onSubmit={handleSubmit(submitHandler)}>
             <div className="input_label_wrapper">
@@ -66,6 +96,7 @@ export default function OptionsForm() {
                     required: true,
                     pattern: /^[^\s].*/, // no spaces in the begining
                     maxLength: 100,
+                    value: inputValue,
                   })}
                 />
                 <button
