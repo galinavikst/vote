@@ -18,7 +18,7 @@ export function OptionsList() {
     dispatch(deleteOption(index));
   };
 
-  const handltEditBtn = (index: number, text: string) => {
+  const handleEditBtn = (index: number, text: string) => {
     dispatch(setInputValue(text));
     handleDeleteBtn(index);
   };
@@ -38,13 +38,15 @@ export function OptionsList() {
       >
         {optionsArr[index] ? (
           <span>
-            <span className="option_text">{optionsArr[index].text}</span>
+            <span className="option_text animate__animated animate__flipInX">
+              {optionsArr[index].text}
+            </span>
             <div className="icons_wrapper">
               <FontAwesomeIcon
                 icon={faPenToSquare}
                 size="xs"
                 className="delete_edit_icons"
-                onClick={() => handltEditBtn(index, optionsArr[index].text)}
+                onClick={() => handleEditBtn(index, optionsArr[index].text)}
               />
               <FontAwesomeIcon
                 icon={faTrashCan}

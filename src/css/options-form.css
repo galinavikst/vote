@@ -23,13 +23,20 @@
   border-radius: 4px;
 }
 
+.question_icons_wrapper:hover .delete_edit_icons,
+.options_list li:hover .delete_edit_icons {
+  opacity: 0.3;
+}
+
 .delete_edit_icons {
   font-size: clamp(13px, 0.75em, 15px);
   color: var(--border-color);
-  opacity: 0.4;
+  opacity: 0;
   transition: all 140ms ease-in-out;
 }
-.delete_edit_icons:hover {
+
+.question_icons_wrapper .delete_edit_icons:hover,
+.options_list li:hover .delete_edit_icons:hover {
   scale: 1.2;
   cursor: pointer;
   opacity: 1;
