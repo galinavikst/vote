@@ -52,7 +52,7 @@
   content: "•";
   position: absolute;
   left: 5px;
-  top: -6px;
+  top: -10px;
   font-size: 35px;
 }
 
@@ -72,6 +72,7 @@
 
 .option_text {
   color: var(--pure-black);
+  animation: showUp 1s ease-in;
 }
 
 .lets_vote_btn {
@@ -91,4 +92,13 @@
 }
 .lets_vote_btn:hover {
   opacity: 0.9;
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

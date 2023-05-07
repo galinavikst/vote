@@ -38,9 +38,7 @@ export function OptionsList() {
       >
         {optionsArr[index] ? (
           <span>
-            <span className="option_text animate__animated animate__flipInX">
-              {optionsArr[index].text}
-            </span>
+            <span className="option_text">{optionsArr[index].text}</span>
             <div className="icons_wrapper">
               <FontAwesomeIcon
                 icon={faPenToSquare}
