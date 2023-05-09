@@ -1,36 +1,41 @@
 import React from "react";
 import "animate.css";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-import QuestionForm from "./components/QuestionForm";
-import OptionsForm from "./components/OptionsForm";
-import { VotingPage } from "./VotingPage";
-import { Player } from "@lottiefiles/react-lottie-player";
+import { Route, Routes, BrowserRouter, Outlet } from "react-router-dom";
+import NotFound from "./pages/notFound";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import CreateVotingPage from "./pages/CreateNewQuestion";
+import { VotingPage } from "./pages/VotingPage";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/vote" element={<CreateVotingPage />} />
-        <Route path="/voting-page" element={<VotingPage />} />
+        <Route element={<Layout />}>
+          <Route path="/vote" element={<HomePage />} />
+          <Route path="/forms" element={<CreateVotingPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/voting-page" element={<VotingPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
-function CreateVotingPage() {
+function Layout() {
   return (
-    <div className="app_wrapper">
-      <>
-        <QuestionForm />
-        <OptionsForm />
-      </>
-      <Player
-        src="https://assets5.lottiefiles.com/packages/lf20_sostbrzv.json"
-        className="player_pencil animate__animated animate__backInDown"
-        autoplay
-        loop
-      />
-    </div>
+    <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
   );
 }
 

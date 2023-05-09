@@ -18,6 +18,7 @@ import { OptionsList } from "./OptionsList";
 import { getRandomColor } from "./servise";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
+import "../css/options-form.css";
 
 type IOptionInput = {
   optionInput: string;

@@ -1,8 +1,9 @@
 import React from "react";
-import { LetsVoteBlock } from "./components/LetsVoteBlock";
-import { OptionsToVote } from "./components/OptionsToVote";
+import { LetsVoteBlock } from "../components/LetsVoteBlock";
+import { OptionsToVote } from "../components/OptionsToVote";
 import { useSelector } from "react-redux";
-import { isRedyToVote, total } from "./store/optionsFormSlice";
+import { isRedyToVote, total } from "../store/optionsFormSlice";
+import "../css/voting-page.css";
 
 export function VotingPage() {
   const letsVoteClicked = useSelector(isRedyToVote);
