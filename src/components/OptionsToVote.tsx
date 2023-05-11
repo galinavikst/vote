@@ -6,16 +6,23 @@ import {
   options,
   updateTotalClicks,
 } from "../store/optionsFormSlice";
-import { setShowPercentage } from "../store/letsVoteBlockSlice";
+import { setShowPercentage, setShowResults } from "../store/letsVoteBlockSlice";
 
 export const OptionsToVote = () => {
   const dispatch = useDispatch();
   const optionsArr = useSelector(options);
 
   const onClickHandler = (index: number) => {
-    dispatch(addClickedCount(index));
-    dispatch(updateTotalClicks());
+    const clicks = optionsArr.reduce((acc, el) => {
+      return acc + el.clicked;
+    }, 0);
     dispatch(setShowPercentage(false));
+    dispatch(addClickedCount(index));
+    dispatch(updateTotalClicks(clicks));
+    dispatch(setShowResults(true));
+    setTimeout(() => {
+      dispatch(setShowPercentage(true));
+    }, 1000);
   };
 
   const list = optionsArr.map((el, index) => {

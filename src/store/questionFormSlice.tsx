@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { allClients } from "../data";
 
 interface IFormState {
   inputQuestionValue: "";
@@ -7,6 +8,21 @@ interface IFormState {
 interface IQuestionFormSlice {
   questionForm: IFormState;
 }
+
+console.log(allClients);
+
+// export const questionFormSlice = createSlice({
+//   name: "questionForm",
+//   initialState: {
+//     inputQuestionValue: "",
+
+//   },
+//   reducers: {
+//     setQuestion(state, action) {
+//       state.inputQuestionValue = action.payload;
+//     },
+//   },
+// });
 
 export const questionFormSlice = createSlice({
   name: "questionForm",

@@ -28,7 +28,7 @@ const optionsFormSlice = createSlice({
   },
   reducers: {
     setOptions(state, action) {
-      state.options = [...state.options, action.payload];
+      state.options = action.payload;
     },
     deleteOption: (state, action) => {
       state.options = state.options.filter(
@@ -42,8 +42,8 @@ const optionsFormSlice = createSlice({
       const index = action.payload;
       state.options[index].clicked += 1;
     },
-    updateTotalClicks(state) {
-      state.totalClicks += 1;
+    updateTotalClicks(state, action) {
+      state.totalClicks = action.payload;
     },
     setReadyToVote(state, action) {
       state.readyToVote = action.payload;

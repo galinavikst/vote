@@ -10,15 +10,15 @@ export function VotingPage() {
   const totalVotes = useSelector(total);
   return (
     <>
-      {letsVoteClicked && (
-        <section className="vote_section">
-          <p className="total_votes">
-            {totalVotes} people have voted in this poll
-          </p>
-          <LetsVoteBlock />
-          <OptionsToVote />
-        </section>
-      )}
+      {/* //{letsVoteClicked && ( */}
+      <section className="vote_section">
+        <p className="total_votes">
+          {totalVotes} people have voted in this poll
+        </p>
+        <LetsVoteBlock />
+        <OptionsToVote />
+      </section>
+      {/* //)} */}
     </>
   );
 }
