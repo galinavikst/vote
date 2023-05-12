@@ -9,7 +9,6 @@ export interface IOption {
 
 interface IOptionFormState {
   options: IOption[];
-  totalClicks: number;
   readyToVote: boolean;
   inputValue: string;
 }
@@ -22,7 +21,6 @@ const optionsFormSlice = createSlice({
   name: "optionsForm",
   initialState: {
     options: [] as IOption[],
-    totalClicks: 0,
     readyToVote: false,
     inputValue: "",
   },
@@ -42,9 +40,6 @@ const optionsFormSlice = createSlice({
       const index = action.payload;
       state.options[index].clicked += 1;
     },
-    updateTotalClicks(state, action) {
-      state.totalClicks = action.payload;
-    },
     setReadyToVote(state, action) {
       state.readyToVote = action.payload;
     },
@@ -60,14 +55,11 @@ export const {
   setOptions,
   setReadyToVote,
   addClickedCount,
-  updateTotalClicks,
   deleteOption,
   deleteAllOptions,
   setInputValue,
 } = optionsFormSlice.actions;
 export const options = (state: IOptionsFormSlice) => state.optionsForm.options;
-export const total = (state: IOptionsFormSlice) =>
-  state.optionsForm.totalClicks;
 export const inputOptionValue = (state: IOptionsFormSlice) =>
   state.optionsForm.inputValue;
 export default optionsFormSlice.reducer;

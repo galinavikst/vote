@@ -10,7 +10,7 @@ export const allClients = [
         options: [
           {
             id: "0 - 19",
-            color: "#54fab1",
+            color: "#d7fe02",
             text: "0 - 19",
             clicked: 1,
           },
@@ -34,7 +34,7 @@ export const allClients = [
           },
           {
             id: "50+",
-            color: "#fa0a16",
+            color: "#bea9de",
             text: "50+",
             clicked: 0,
           },
@@ -88,7 +88,7 @@ export const allClients = [
           },
           {
             id: "3000+",
-            color: "#ef54bb",
+            color: "#7b8cde",
             text: "3000+",
             clicked: 3,
           },

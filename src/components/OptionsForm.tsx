@@ -46,7 +46,8 @@ export default function OptionsForm() {
       color: getRandomColor(),
       clicked: 0,
     };
-    dispatch(setOptions(newOption));
+    const newOptionsArr = [...optionsArr, newOption];
+    dispatch(setOptions(newOptionsArr));
     resetField("optionInput"); //reset input after submiting
   };
 

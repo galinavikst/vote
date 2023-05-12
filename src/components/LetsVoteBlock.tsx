@@ -1,56 +1,20 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { IOption, options, total } from "../store/optionsFormSlice";
+import React from "react";
+import { useSelector } from "react-redux";
+import { IOption, options } from "../store/optionsFormSlice";
 import { Question } from "./Question";
-import { getHight, getPercentage, getWidth } from "./servise";
-import {
-  isPercentage,
-  isResult,
-  setShowPercentage,
-} from "../store/letsVoteBlockSlice";
+import { getHight, getPercentage, getTotalClicks, getWidth } from "./servise";
+import { isPercentage, isResult } from "../store/letsVoteBlockSlice";
 
 export function LetsVoteBlock() {
-  const dispatch = useDispatch();
   const optionsArr = useSelector(options);
-  const totalClick = useSelector(total);
   const toShowPercentage = useSelector(isPercentage);
   const toShowResult = useSelector(isResult);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     dispatch(setShowPercentage(true));
-  //   }, 1000);
-  // }, [dispatch, totalClick]);
-
-  // const results = optionsArr.map((el, index) => {
-  //   const height = getHight(totalClick, el.clicked);
-  //   return (
-  //     <div
-  //       className="result"
-  //       key={index}
-  //       style={{
-  //         width: getWidth(optionsArr),
-  //         background: el.color,
-  //         height: height + "px",
-  //       }}
-  //     >
-  //       {toShowPercentage && (
-  //         <span className="percentage">{getPercentage(height) + "%"}</span>
-  //       )}
-  //     </div>
-  //   );
-  // });
 
   return (
     <div className="results_block">
       <Question />
       <div className="results">
-        {createVotingBlock(
-          optionsArr,
-          totalClick,
-          toShowPercentage,
-          toShowResult
-        )}
+        {createVotingBlock(optionsArr, toShowPercentage, toShowResult)}
       </div>
     </div>
   );
@@ -58,12 +22,15 @@ export function LetsVoteBlock() {
 
 export function createVotingBlock(
   optionsArr: IOption[],
-  totalClick: number,
   toShowPercentage: boolean,
   toShowResult: boolean
 ) {
+  const clicks = getTotalClicks(optionsArr);
+
   const results = optionsArr.map((el, index) => {
-    const height = getHight(totalClick, el.clicked);
+    const height = getHight(clicks, el.clicked);
+    console.log(clicks, optionsArr, el.clicked);
+
     return (
       <div
         className="result"

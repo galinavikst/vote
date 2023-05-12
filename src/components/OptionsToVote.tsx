@@ -1,11 +1,7 @@
 import React from "react";
 import "animate.css";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addClickedCount,
-  options,
-  updateTotalClicks,
-} from "../store/optionsFormSlice";
+import { addClickedCount, options } from "../store/optionsFormSlice";
 import { setShowPercentage, setShowResults } from "../store/letsVoteBlockSlice";
 
 export const OptionsToVote = () => {
@@ -13,12 +9,8 @@ export const OptionsToVote = () => {
   const optionsArr = useSelector(options);
 
   const onClickHandler = (index: number) => {
-    const clicks = optionsArr.reduce((acc, el) => {
-      return acc + el.clicked;
-    }, 0);
     dispatch(setShowPercentage(false));
     dispatch(addClickedCount(index));
-    dispatch(updateTotalClicks(clicks));
     dispatch(setShowResults(true));
     setTimeout(() => {
       dispatch(setShowPercentage(true));

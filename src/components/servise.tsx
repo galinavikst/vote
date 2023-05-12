@@ -22,3 +22,8 @@ export const getPercentage = (height: number) => {
   if (height === 5) return 0;
   return Math.round((height / VoteBlockHeight) * 100);
 };
+
+export const getTotalClicks = (optionsArr: IOption[]) =>
+  optionsArr.reduce((acc, el) => {
+    return acc + el.clicked;
+  }, 0);
