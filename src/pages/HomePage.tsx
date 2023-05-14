@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { allClients } from "../data";
 import { useDispatch, useSelector } from "react-redux";
-import { setQuestion } from "../store/questionFormSlice";
+import { inputQuestionValue, setQuestion } from "../store/questionFormSlice";
 import { IOption, options, setOptions } from "../store/optionsFormSlice";
-import { createVotingBlock } from "../components/LetsVoteBlock";
-import { isPercentage, isResult } from "../store/letsVoteBlockSlice";
+import createVotingBlock from "../components/servise";
+import { isPercentage, isResult } from "../store/votingPageSlice";
 
 interface IQuestion {
   question: string;
@@ -18,8 +18,10 @@ export default function HomePage() {
   const optionsArr = useSelector(options);
   const toShowPercentage = useSelector(isPercentage);
   const toShowResult = useSelector(isResult);
+  const question = useSelector(inputQuestionValue);
 
   const sendToQuestionForm = () => {
+    console.log(question);
     dispatch(setOptions([]));
     dispatch(setQuestion(""));
     navigate("/forms");

@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import questionFormReducer from "./questionFormSlice";
 import optionsFormReducer from "./optionsFormSlice";
-import letsVoteBlockReducer from "./letsVoteBlockSlice";
+import letsVoteBlockReducer from "./votingPageSlice";
 
 const rootReducer = combineReducers({
   questionForm: questionFormReducer,

@@ -2,7 +2,7 @@ import React from "react";
 import "animate.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addClickedCount, options } from "../store/optionsFormSlice";
-import { setShowPercentage, setShowResults } from "../store/letsVoteBlockSlice";
+import { setShowPercentage, setShowResults } from "../store/votingPageSlice";
 
 export const OptionsToVote = () => {
   const dispatch = useDispatch();

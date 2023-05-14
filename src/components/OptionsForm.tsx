@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { inputQuestionValue, setQuestion } from "../store/questionFormSlice";
 import { useForm } from "react-hook-form";
 import {
-  isRedyToVote,
-  setReadyToVote,
   options,
   setOptions,
   deleteAllOptions,
@@ -19,6 +17,7 @@ import { getRandomColor } from "./servise";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import "../css/options-form.css";
+import { allClients } from "../data";
 
 type IOptionInput = {
   optionInput: string;
@@ -27,7 +26,6 @@ type IOptionInput = {
 export default function OptionsForm() {
   const dispatch = useDispatch();
   const question = useSelector(inputQuestionValue);
-  const letsVoteClicked = useSelector(isRedyToVote);
   const optionsArr = useSelector(options);
   const inputValue = useSelector(inputOptionValue);
 
@@ -52,7 +50,18 @@ export default function OptionsForm() {
   };
 
   const onClickHandler = () => {
-    dispatch(setReadyToVote(true));
+    allClients.push({
+      name: "",
+      email: "",
+      password: "",
+      questions: [
+        {
+          question: question,
+          options: optionsArr,
+        },
+      ],
+    });
+    console.log(allClients);
   };
 
   const handleEditBtn = () => {
@@ -67,7 +76,7 @@ export default function OptionsForm() {
 
   return (
     <>
-      {question && !letsVoteClicked && (
+      {question && (
         <div className="options_form_wrapper">
           <div className="question_icons_wrapper">
             <Question />
@@ -118,7 +127,7 @@ export default function OptionsForm() {
               onClick={onClickHandler}
               disabled={optionsArr.length < 2 && true}
             >
-              Let's vote!
+              Get ready to vote!
             </button>
           </Link>
         </div>

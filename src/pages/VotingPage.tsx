@@ -1,14 +1,16 @@
 import React from "react";
-import { LetsVoteBlock } from "../components/LetsVoteBlock";
 import { OptionsToVote } from "../components/OptionsToVote";
 import { useSelector } from "react-redux";
 import { options } from "../store/optionsFormSlice";
 import "../css/voting-page.css";
-import { getTotalClicks } from "../components/servise";
+import createVotingBlock, { getTotalClicks } from "../components/servise";
+import { Question } from "../components/Question";
+import { isPercentage, isResult } from "../store/votingPageSlice";
 
 export function VotingPage() {
-  //const totalVotes = useSelector(total);
   const optionsArr = useSelector(options);
+  const toShowPercentage = useSelector(isPercentage);
+  const toShowResult = useSelector(isResult);
 
   return (
     <>
@@ -16,7 +18,12 @@ export function VotingPage() {
         <p className="total_votes">
           {getTotalClicks(optionsArr)} people have voted in this poll
         </p>
-        <LetsVoteBlock />
+        <div className="results_block">
+          <Question />
+          <div className="results">
+            {createVotingBlock(optionsArr, toShowPercentage, toShowResult)}
+          </div>
+        </div>
         <OptionsToVote />
       </section>
     </>

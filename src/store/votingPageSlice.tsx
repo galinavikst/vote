@@ -9,7 +9,7 @@ interface ILetsVoteBlockSlice {
   letsVoteBlock: ILetsVoteBlockState;
 }
 
-const letsVoteBlockSlice = createSlice({
+const votingPageSlice = createSlice({
   name: "letsVoteBlock",
   initialState: {
     showPercentage: true,
@@ -25,10 +25,10 @@ const letsVoteBlockSlice = createSlice({
   },
 });
 
-export const { setShowPercentage, setShowResults } = letsVoteBlockSlice.actions;
+export const { setShowPercentage, setShowResults } = votingPageSlice.actions;
 export const isPercentage = (state: ILetsVoteBlockSlice) =>
   state.letsVoteBlock.showPercentage;
 export const isResult = (state: ILetsVoteBlockSlice) =>
   state.letsVoteBlock.showResults;
 
-export default letsVoteBlockSlice.reducer;
+export default votingPageSlice.reducer;
