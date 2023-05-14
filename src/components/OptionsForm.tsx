@@ -125,7 +125,7 @@ export default function OptionsForm() {
               className="lets_vote_btn"
               type="button"
               onClick={onClickHandler}
-              disabled={optionsArr.length < 2 && true}
+              disabled={optionsArr.length < 2}
             >
               Get ready to vote!
             </button>

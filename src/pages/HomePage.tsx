@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { allClients } from "../data";
 import { useDispatch, useSelector } from "react-redux";
-import { inputQuestionValue, setQuestion } from "../store/questionFormSlice";
+import { setQuestion } from "../store/questionFormSlice";
 import { IOption, options, setOptions } from "../store/optionsFormSlice";
 import createVotingBlock from "../components/servise";
 import { isPercentage, isResult } from "../store/votingPageSlice";
@@ -18,10 +18,8 @@ export default function HomePage() {
   const optionsArr = useSelector(options);
   const toShowPercentage = useSelector(isPercentage);
   const toShowResult = useSelector(isResult);
-  const question = useSelector(inputQuestionValue);
 
   const sendToQuestionForm = () => {
-    console.log(question);
     dispatch(setOptions([]));
     dispatch(setQuestion(""));
     navigate("/forms");
@@ -46,7 +44,6 @@ export default function HomePage() {
 
   return (
     <div>
-      <p>Home</p>
       <button onClick={sendToQuestionForm}>create your own question</button>
       <ol>{questions}</ol>
     </div>

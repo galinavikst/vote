@@ -32,6 +32,8 @@ html {
   background: var(--main-bg-gradient);
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
+  position: relative;
 }
 
 body {
@@ -109,15 +111,14 @@ button:active {
 .app_wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100vh;
 }
 
 .lf-player-container,
 .question_form {
   width: 50%;
+  height: 80%;
 }
 
 .player_pencil {

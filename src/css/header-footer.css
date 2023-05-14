@@ -2,7 +2,6 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  padding: 15px;
 }
 
 header {
@@ -11,7 +10,11 @@ header {
 
 /* footer 
 ............................... */
+
 footer {
-  justify-content: space-evenly;
-  border-top: 1px solid;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
