@@ -5,7 +5,9 @@ import { setQuestion } from "../store/questionFormSlice";
 import { IOption, options, setOptions } from "../store/optionsFormSlice";
 import createVotingBlock from "../components/servise";
 import { isPercentage, isResult } from "../store/votingPageSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { LottieSet } from "../components/Lottie";
+import { lottiePage, resetLottieSrc, setPage } from "../store/lottieSlice";
 
 interface IQuestion {
   question: string;
@@ -19,10 +21,17 @@ export default function HomePage() {
   const optionsArr = useSelector(options);
   const toShowPercentage = useSelector(isPercentage);
   const toShowResult = useSelector(isResult);
+  const page = useSelector(lottiePage);
+
+  useEffect(() => {
+    dispatch(setPage("home"));
+  }, [dispatch, page]);
 
   const sendToQuestionForm = () => {
     dispatch(setOptions([]));
     dispatch(setQuestion(""));
+    dispatch(resetLottieSrc()); //reset src to prevent doublicate lottie
+    dispatch(setPage("forms"));
     navigate("/forms");
   };
 
@@ -52,15 +61,20 @@ export default function HomePage() {
   return (
     <div>
       <button onClick={sendToQuestionForm}>create your own question</button>
-      <form>
-        <input
-          type="text"
-          placeholder="Search..."
-          onChange={(e) => handleOnChange(e.target.value)}
-          value={seachInputValue}
-        />
-      </form>
-      <ol>{questions}</ol>
+      <div className="app_wrapper">
+        <div>
+          <form>
+            <input
+              type="text"
+              placeholder="Search..."
+              onChange={(e) => handleOnChange(e.target.value)}
+              value={seachInputValue}
+            />
+          </form>
+          <ol>{questions}</ol>
+        </div>
+        <LottieSet />
+      </div>
     </div>
   );
 }

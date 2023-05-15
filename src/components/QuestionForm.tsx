@@ -20,7 +20,6 @@ export default function QuestionForm() {
   const handleOnSubmit = (data: IQuestionInput) => {
     const newQuestion = data.questionInput;
     dispatch(setQuestion(newQuestion));
-    console.log(question, data.questionInput);
   };
 
   return (
