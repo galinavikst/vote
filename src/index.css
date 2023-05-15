@@ -18,6 +18,7 @@
   --accent-gradient: linear-gradient(180deg, #fff1ab 0%, #83c17d 100%);
   --main-text-shadow: 1px 1px #6f6c7a, 0px 0px #6f6c7a, 1px 2px #6f6c7a;
   --main-accent-color: #83c17d;
+  --light-accent-color: #bfe5bc;
 }
 
 * {
@@ -95,6 +96,10 @@ button:active {
   font-size: 12px;
   bottom: -19px;
   color: var(--warning-red);
+}
+
+.highlighted {
+  background: var(--light-accent-color);
 }
 
 .save_button {
