@@ -27,19 +27,19 @@ export default function HomePage() {
     dispatch(setPage("home"));
   }, [dispatch, page]);
 
+  const goVote = (item: IQuestion) => {
+    dispatch(setQuestion(item.question));
+    dispatch(setOptions(item.options));
+    createVotingBlock(optionsArr, toShowPercentage, toShowResult);
+    navigate("/voting-page");
+  };
+
   const sendToQuestionForm = () => {
     dispatch(setOptions([]));
     dispatch(setQuestion(""));
     dispatch(resetLottieSrc()); //reset src to prevent doublicate lottie
     dispatch(setPage("forms"));
     navigate("/forms");
-  };
-
-  const goVote = (item: IQuestion) => {
-    dispatch(setQuestion(item.question));
-    dispatch(setOptions(item.options));
-    createVotingBlock(optionsArr, toShowPercentage, toShowResult);
-    navigate("/voting-page");
   };
 
   const handleOnChange = (inputValue: string) => {
@@ -60,9 +60,17 @@ export default function HomePage() {
 
   return (
     <div>
-      <button onClick={sendToQuestionForm}>create your own question</button>
+      <div className="hero_wrapper">
+        <h1>Be the part of decision</h1>
+        <div className="hero">
+          <button className="create_poll_btn" onClick={sendToQuestionForm}>
+            create your poll
+          </button>
+        </div>
+      </div>
+
       <div className="app_wrapper">
-        <div>
+        <div className="lookup_wrapper">
           <form>
             <input
               type="text"

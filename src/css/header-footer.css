@@ -1,20 +1,33 @@
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
 }
 
 header {
+  padding: 15px 0;
   border-bottom: 1px solid;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+header a {
+  font-size: 17px;
 }
 
 /* footer 
 ............................... */
 
 footer {
+  width: 100%;
   font-size: 1rem;
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 5px;
+}
+
+footer > div {
+  justify-content: center;
+  gap: 50px;
 }

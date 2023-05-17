@@ -9,6 +9,7 @@ import CreateNewQuestion from "./pages/CreateNewQuestion";
 import { VotingPage } from "./pages/VotingPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 function App() {
   return (
