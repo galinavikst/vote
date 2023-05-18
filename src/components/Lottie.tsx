@@ -55,7 +55,7 @@ export function LottieSet() {
   return (
     <Player
       src={lottieSrc}
-      className="player_pencil animate__animated animate__backInDown"
+      className="player_pencil animate__animated animate__zoomIn"
       autoplay
       loop
     />

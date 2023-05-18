@@ -117,11 +117,15 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 70px 20px;
-  /* min-height: 500px; */
+}
+
+.app_wrapper > .question_form {
+  align-self: center;
 }
 
 .lf-player-container,
 .question_form,
+.options_form_wrapper,
 .lookup_wrapper {
   width: 50%;
   height: 80%;
@@ -129,6 +133,7 @@ a {
 
 .player_pencil {
   width: 100%;
+  height: 450px;
 }
 
 .input_label_wrapper {
@@ -174,7 +179,7 @@ a {
 h1 {
   text-align: center;
   backdrop-filter: blur(40px);
-  width: 100vw;
+  width: 100%;
   position: absolute;
   top: 15%;
   line-height: 1.5;
@@ -187,11 +192,19 @@ h1 {
 
 ol {
   padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+}
+
+ol li:nth-child(odd) {
+  background: var(--main-bg-gradient);
 }
 
 ol > li {
   font-size: 17px;
+  line-height: 2;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+ol > li:hover {
+  cursor: pointer;
 }

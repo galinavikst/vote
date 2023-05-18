@@ -61,7 +61,9 @@ export default function HomePage() {
   return (
     <div>
       <div className="hero_wrapper">
-        <h1>Be the part of decision</h1>
+        <h1 className=" animate__animated animate__fadeIn">
+          Be the part of decision
+        </h1>
         <div className="hero">
           <button className="create_poll_btn" onClick={sendToQuestionForm}>
             create your poll

@@ -1,6 +1,4 @@
 @media (max-width: 768px) {
-  body {
-  }
   .options_form_wrapper,
   .question_form {
     width: 70%;
@@ -8,12 +6,13 @@
 }
 
 @media (max-width: 426px) {
-  body {
-  }
-
   .error {
     top: -18px;
     right: 0;
+  }
+
+  .app_wrapper {
+    padding: 70px 10px;
   }
 
   .app_wrapper,
@@ -21,9 +20,6 @@
     flex-direction: column;
   }
 
-  .app_wrapper {
-    padding: 40px 10px;
-  }
   .options_form_wrapper,
   .question_form,
   .lookup_wrapper,

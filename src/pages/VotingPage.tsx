@@ -3,6 +3,7 @@ import { OptionsToVote } from "../components/OptionsToVote";
 import { useSelector } from "react-redux";
 import { options } from "../store/optionsFormSlice";
 import "../css/voting-page.css";
+import "../css/media.css";
 import createVotingBlock, { getTotalClicks } from "../components/servise";
 import { Question } from "../components/Question";
 import { isPercentage, isResult } from "../store/votingPageSlice";
