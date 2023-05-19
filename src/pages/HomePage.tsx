@@ -7,7 +7,8 @@ import createVotingBlock from "../components/servise";
 import { isPercentage, isResult } from "../store/votingPageSlice";
 import { useEffect, useState } from "react";
 import { LottieSet } from "../components/Lottie";
-import { lottiePage, resetLottieSrc, setPage } from "../store/lottieSlice";
+import { lottiePage, setPage } from "../store/lottieSlice";
+import Hero from "../components/Hero";
 
 interface IQuestion {
   question: string;
@@ -32,14 +33,7 @@ export default function HomePage() {
     dispatch(setOptions(item.options));
     createVotingBlock(optionsArr, toShowPercentage, toShowResult);
     navigate("/voting-page");
-  };
-
-  const sendToQuestionForm = () => {
-    dispatch(setOptions([]));
-    dispatch(setQuestion(""));
-    dispatch(resetLottieSrc()); //reset src to prevent doublicate lottie
-    dispatch(setPage("forms"));
-    navigate("/forms");
+    dispatch(setPage("voting-page"));
   };
 
   const handleOnChange = (inputValue: string) => {
@@ -59,33 +53,26 @@ export default function HomePage() {
   });
 
   return (
-    <div>
-      <div className="hero_wrapper">
-        <h1 className=" animate__animated animate__fadeIn">
-          Be the part of decision
-        </h1>
-        <div className="hero">
-          <button className="create_poll_btn" onClick={sendToQuestionForm}>
-            create your poll
-          </button>
+    <>
+      <Hero />
+      <div id="poll" className="app_wrapper home">
+        <h2>Find Your Desired Poll</h2>
+        <div className="app_wrapper lookup">
+          <div className="lookup_wrapper">
+            <form>
+              <input
+                type="text"
+                placeholder="Search..."
+                onChange={(e) => handleOnChange(e.target.value)}
+                value={seachInputValue}
+              />
+            </form>
+            <ol>{questions}</ol>
+          </div>
+          <LottieSet />
         </div>
       </div>
-
-      <div className="app_wrapper">
-        <div className="lookup_wrapper">
-          <form>
-            <input
-              type="text"
-              placeholder="Search..."
-              onChange={(e) => handleOnChange(e.target.value)}
-              value={seachInputValue}
-            />
-          </form>
-          <ol>{questions}</ol>
-        </div>
-        <LottieSet />
-      </div>
-    </div>
+    </>
   );
 }
 

@@ -5,38 +5,65 @@ export const allClients = [
     password: "1234",
     questions: [
       {
-        id: "How old are you?",
-        question: "How old are you?",
+        id: "Our office will have a theme day, which one would you choose?",
+        question:
+          "Our office will have a theme day, which one would you choose?",
         options: [
           {
-            id: "0 - 19",
+            id: "Crazy Hat Day",
             color: "#d7fe02",
-            text: "0 - 19",
+            text: "Crazy Hat Day",
             clicked: 1,
           },
           {
-            id: "20 - 30",
+            id: "Superhero Day",
             color: "#23fa22",
-            text: "20 - 30",
+            text: "Superhero Day",
             clicked: 9,
           },
           {
-            id: "31 - 40",
+            id: "Pajama Day",
             color: "#af0a22",
-            text: "31 - 40",
+            text: "Pajama Day",
             clicked: 8,
           },
           {
-            id: "41 - 50",
+            id: "Hawaiian Shirt Day",
             color: "#fa0a25",
-            text: "41 - 50",
+            text: "Hawaiian Shirt Day",
             clicked: 2,
           },
+        ],
+      },
+      {
+        question: "What's your preferred office pet?",
+        options: [
           {
-            id: "50+",
-            color: "#bea9de",
-            text: "50+",
-            clicked: 0,
+            id: "Office dog",
+            color: "#33ffd7",
+            text: "Office dog",
+            clicked: 3,
+          },
+
+          {
+            id: "Office cat",
+            color: "#ff5733",
+            text: "Office cat",
+            clicked: 8,
+          },
+
+          {
+            id: "Office fish tank",
+            color: "#5481ee",
+            text: "Office fish tank",
+            clicked: 9,
+          },
+
+          {
+            id: "Office plant",
+            color: "#65ef54 ",
+            text: "Office plant",
+            clicked: 11,
           },
         ],
       },
@@ -90,6 +117,41 @@ export const allClients = [
             id: "3000+",
             color: "#7b8cde",
             text: "3000+",
+            clicked: 3,
+          },
+        ],
+      },
+      {
+        question: "What's the best way to start the day in the office?",
+        options: [
+          {
+            id: "Coffee",
+            color: "#f0f46f",
+            text: "Coffee",
+            clicked: 7,
+          },
+          {
+            id: "Yoga/stretching",
+            color: "#b8f46f",
+            text: "Yoga/stretching",
+            clicked: 5,
+          },
+          {
+            id: "Office gossip",
+            color: "#dc54ef",
+            text: "Office gossip",
+            clicked: 7,
+          },
+          {
+            id: "Dancing to a favorite song",
+            color: "#7b8cde",
+            text: "Dancing to a favorite song",
+            clicked: 3,
+          },
+          {
+            id: "Other",
+            color: "#16c6d0 ",
+            text: "Other",
             clicked: 3,
           },
         ],

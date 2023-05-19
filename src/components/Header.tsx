@@ -1,13 +1,14 @@
 import React from "react";
 import "../css/header-footer.css";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setShowResults } from "../store/votingPageSlice";
-import { resetLottieSrc, setPage } from "../store/lottieSlice";
+import { lottiePage, resetLottieSrc, setPage } from "../store/lottieSlice";
 import { setOptions } from "../store/optionsFormSlice";
 
 export default function Header() {
   const dispatch = useDispatch();
+  const page = useSelector(lottiePage);
 
   const onclickHandler = () => {
     dispatch(resetLottieSrc()); //reset src to prevent doublicate lottie
@@ -20,8 +21,9 @@ export default function Header() {
     <header>
       <div className="wrapper">
         <Link onClick={onclickHandler} to="/vote">
-          Back home
+          Home
         </Link>
+        {page === "home" ? <a href="#poll">Poll</a> : null}
       </div>
     </header>
   );

@@ -9,11 +9,12 @@ import CreateNewQuestion from "./pages/CreateNewQuestion";
 import { VotingPage } from "./pages/VotingPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Player } from "@lottiefiles/react-lottie-player";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/vote" element={<HomePage />} />

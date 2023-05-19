@@ -15,6 +15,14 @@
     padding: 70px 10px;
   }
 
+  .app_wrapper.home {
+    padding: 40px 0px;
+  }
+
+  .app_wrapper.lookup {
+    padding: 40px 10px;
+  }
+
   .app_wrapper,
   .input_btn_wrapper {
     flex-direction: column;
