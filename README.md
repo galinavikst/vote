@@ -1,5 +1,5 @@
 # Voting App
-This is a web application built with React, Redux Toolkit, TypeScript and CSS. It allows users to create questions with multiple answer options and conduct voting on them. The results of the voting are dynamically calculated and displayed in the form of voting count and percentage.
+This is a web application built with React, Redux Toolkit, TypeScript and CSS. It allows users to create poll with multiple answer options and conduct voting on them. The results of the voting are dynamically calculated and displayed in the form of voting count and percentage.
 
 The app also includes form validation and uses React Router for navigation.
 
@@ -14,8 +14,8 @@ To run this application locally, please follow these steps:
 > Alternatively, you can simply follow the **[link](https://galinavikst.github.io/vote/)** to access the deployed app.
 
 ## Usage:
-Upon launching the application, you will see a list of existing questions.   
-You can create a new question by filling out the form with the question text and answer options. And navigate to the voting page.  
+Upon launching the application, you will see a list of existing questions and a lookup service for conveniently searching for the desired poll.    
+You can create a new poll by filling out the form with the question text and answer options. And generate a voting page.  
 Once you submit the form, the new question will appear in the list. To vote on a question, click on the question in the list to navigate to the voting page. 
 From there, you can select your preferred answer option and submit your vote.  
 The results of the voting will be displayed on the same page, showing the total number of votes and the percentage of votes for each answer option.
