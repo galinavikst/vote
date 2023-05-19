@@ -129,6 +129,10 @@ a {
 
 .app_wrapper > .question_form {
   align-self: center;
+  padding: 20px 5px;
+  box-shadow: 10px 0px 10px -5px var(--light-border-color),
+    -10px 0px 10px -5px var(--light-border-color);
+  border-radius: 5px;
 }
 
 .lf-player-container,
