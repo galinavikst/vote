@@ -14,8 +14,9 @@ To run this application locally, please follow these steps:
 > Alternatively, you can simply follow the **[link](https://galinavikst.github.io/vote/)** to access the deployed app.
 
 ## Usage:
-<!-- Upon launching the application, you will see a list of existing questions. -->    
-You can create a new question by filling out the form with the question text and answer options. And navigate to the voting page.<!-- Once you submit the form, the new question will appear in the list. To vote on a question, click on the question in the list to navigate to the voting page. -->  
+Upon launching the application, you will see a list of existing questions.   
+You can create a new question by filling out the form with the question text and answer options. And navigate to the voting page.  
+Once you submit the form, the new question will appear in the list. To vote on a question, click on the question in the list to navigate to the voting page. 
 From there, you can select your preferred answer option and submit your vote.  
 The results of the voting will be displayed on the same page, showing the total number of votes and the percentage of votes for each answer option.
 
@@ -25,6 +26,8 @@ The results of the voting will be displayed on the same page, showing the total 
 - Redux Toolkit
 - TypeScript
 - CSS
+- Lottie animations
+- Animate.css
 
 
 This application was built as a project for *Microsoft Reactor Web Development course / Microsoft.*
