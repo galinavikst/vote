@@ -7,9 +7,9 @@ import { lottiePage, lottieSrcValue, setLottieSrc } from "../store/lottieSlice";
 export const lottiePencil = {
   idea: "https://assets5.lottiefiles.com/packages/lf20_sostbrzv.json",
   sleepy: "https://assets5.lottiefiles.com/packages/lf20_kkkelbun.json",
-  //happy: "https://assets5.lottiefiles.com/packages/lf20_oc9peor8.json",
   thinking: "https://assets5.lottiefiles.com/packages/lf20_qyAboZXPX9.json",
   strong: "https://assets5.lottiefiles.com/packages/lf20_lgyb3olf.json",
+  //happy: "https://assets5.lottiefiles.com/packages/lf20_oc9peor8.json",
 };
 
 export function LottieSet() {

@@ -44,9 +44,14 @@ export default function OptionsForm() {
       color: getRandomColor(),
       clicked: 0,
     };
-    const newOptionsArr = [...optionsArr, newOption];
-    dispatch(setOptions(newOptionsArr));
-    resetField("optionInput"); //reset input after submiting
+
+    //identical options check
+    if (optionsArr.some((option) => option.id === newOption.id)) return;
+    else {
+      const newOptionsArr = [...optionsArr, newOption];
+      dispatch(setOptions(newOptionsArr));
+      resetField("optionInput"); //reset input after submiting
+    }
   };
 
   const onClickHandler = () => {
