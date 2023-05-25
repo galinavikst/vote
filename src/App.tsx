@@ -10,6 +10,7 @@ import { VotingPage } from "./pages/VotingPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import { allClients } from "./data";
 
 function App() {
   return (
@@ -21,7 +22,10 @@ function App() {
           <Route path="/forms" element={<CreateNewQuestion />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/voting-page" element={<VotingPage />} />
+          <Route
+            path="/voting-page"
+            element={<VotingPage allClients={allClients} />}
+          />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

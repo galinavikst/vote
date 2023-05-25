@@ -61,8 +61,11 @@ export default function OptionsForm() {
       password: "",
       questions: [
         {
+          id: question,
           question: question,
           options: optionsArr,
+          votedOption: -1,
+          totalClicks: 0,
         },
       ],
     });

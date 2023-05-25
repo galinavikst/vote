@@ -1,3 +1,29 @@
+export interface IAllClients {
+  clients: IClient[];
+}
+
+export interface IClient {
+  name: string;
+  email: string;
+  password: string;
+  questions: IQuestions[];
+}
+
+interface IQuestions {
+  id: string;
+  question: string;
+  options: IOption[];
+  votedOption: number;
+  totalClicks: number;
+}
+
+interface IOption {
+  id: string;
+  color: string;
+  text: string;
+  clicked: number;
+}
+
 export const allClients = [
   {
     name: "Bob",
@@ -34,8 +60,11 @@ export const allClients = [
             clicked: 2,
           },
         ],
+        votedOption: -1,
+        totalClicks: 20,
       },
       {
+        id: "What's your preferred office pet?",
         question: "What's your preferred office pet?",
         options: [
           {
@@ -66,8 +95,11 @@ export const allClients = [
             clicked: 11,
           },
         ],
+        votedOption: -1,
+        totalClicks: 31,
       },
       {
+        id: "Do you have kids?",
         question: "Do you have kids?",
         options: [
           {
@@ -84,6 +116,8 @@ export const allClients = [
             clicked: 15,
           },
         ],
+        votedOption: -1,
+        totalClicks: 26,
       },
     ],
   },
@@ -93,6 +127,7 @@ export const allClients = [
     password: "0000",
     questions: [
       {
+        id: "What is your salary (usd)?",
         question: "What is your salary (usd)?",
         options: [
           {
@@ -120,8 +155,11 @@ export const allClients = [
             clicked: 3,
           },
         ],
+        votedOption: -1,
+        totalClicks: 22,
       },
       {
+        id: "What's the best way to start the day in the office?",
         question: "What's the best way to start the day in the office?",
         options: [
           {
@@ -155,6 +193,8 @@ export const allClients = [
             clicked: 3,
           },
         ],
+        votedOption: -1,
+        totalClicks: 25,
       },
     ],
   },

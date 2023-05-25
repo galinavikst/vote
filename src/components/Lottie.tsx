@@ -1,3 +1,4 @@
+import React from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
