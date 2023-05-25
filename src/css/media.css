@@ -1,7 +1,4 @@
 @media (max-width: 768px) {
-  body {
-    padding: 0 40px;
-  }
   .options_form_wrapper,
   .question_form {
     width: 70%;
@@ -9,13 +6,21 @@
 }
 
 @media (max-width: 426px) {
-  body {
-    padding: 0 12px;
-  }
-
   .error {
     top: -18px;
     right: 0;
+  }
+
+  .app_wrapper {
+    padding: 70px 10px;
+  }
+
+  .app_wrapper.home {
+    padding: 40px 0px;
+  }
+
+  .app_wrapper.lookup {
+    padding: 40px 10px;
   }
 
   .app_wrapper,
@@ -23,11 +28,9 @@
     flex-direction: column;
   }
 
-  .app_wrapper {
-    padding: 40px 0 0;
-  }
   .options_form_wrapper,
   .question_form,
+  .lookup_wrapper,
   .lf-player-container {
     width: 100%;
   }

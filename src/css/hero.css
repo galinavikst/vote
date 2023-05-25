@@ -1,0 +1,44 @@
+.hero_wrapper {
+  background: var(--btn-bg-gradient);
+  background-image: url("../img/hands.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.hero {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px 20px;
+  height: inherit;
+}
+
+.create_poll_btn {
+  display: block;
+  margin-left: auto;
+  text-transform: uppercase;
+  transition: all ease-in-out 140ms;
+  opacity: 0.8;
+  background: var(--pure-white);
+}
+
+.create_poll_btn:hover,
+.create_poll_btn:focus {
+  cursor: pointer;
+  background: transparent;
+}
+
+h1 {
+  text-align: center;
+  backdrop-filter: blur(40px);
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  line-height: 1.5;
+  padding: 80px 0;
+  color: var(--pure-white);
+  text-shadow: 8px 0px 22px rgba(0, 0, 0, 0.5);
+  transform: translateZ(100px) rotateX(30deg);
+  font-size: 3em;
+}
