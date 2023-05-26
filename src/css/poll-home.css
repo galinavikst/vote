@@ -1,0 +1,37 @@
+ol {
+  padding: 20px 0;
+}
+
+ol li:nth-child(odd) {
+  background: var(--main-bg-gradient);
+}
+
+ol > li {
+  position: relative;
+  font-size: 17px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  transition: all ease-in 150ms;
+}
+
+ol > li:hover {
+  cursor: pointer;
+  background: var(--poll-hover-bg-color);
+}
+
+ol > li:hover > .pop_up {
+  opacity: 1;
+}
+
+.pop_up {
+  position: absolute;
+  padding: 5px;
+  border-radius: 4px;
+  top: -20px;
+  right: 0;
+  color: var(--light-border-color);
+  white-space: nowrap;
+  background: var(--pure-white);
+  opacity: 0;
+  transition: all 140ms ease-in;
+}

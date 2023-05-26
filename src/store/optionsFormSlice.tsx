@@ -1,11 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-export interface IOption {
-  id: string;
-  color: string;
-  text: string;
-  clicked: number;
-}
+import { IOption } from "../data";
 
 interface IOptionFormState {
   options: IOption[];

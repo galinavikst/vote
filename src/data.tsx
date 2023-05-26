@@ -9,7 +9,7 @@ export interface IClient {
   questions: IQuestions[];
 }
 
-interface IQuestions {
+export interface IQuestions {
   id: string;
   question: string;
   options: IOption[];
@@ -17,7 +17,7 @@ interface IQuestions {
   totalClicks: number;
 }
 
-interface IOption {
+export interface IOption {
   id: string;
   color: string;
   text: string;

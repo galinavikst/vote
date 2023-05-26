@@ -1,20 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { allClients } from "../data";
+import { IQuestions, allClients } from "../data";
 import { useDispatch, useSelector } from "react-redux";
 import { setQuestion } from "../store/questionFormSlice";
-import { IOption, options, setOptions } from "../store/optionsFormSlice";
+import { options, setOptions } from "../store/optionsFormSlice";
 import createVotingBlock from "../components/servise";
 import { isPercentage, isResult } from "../store/votingPageSlice";
 import { useEffect, useState } from "react";
 import { LottieSet } from "../components/Lottie";
 import { lottiePage, setPage } from "../store/lottieSlice";
 import Hero from "../components/Hero";
-
-interface IQuestion {
-  question: string;
-  options: IOption[];
-}
+import "../css/poll-home.css";
 
 export default function HomePage() {
   const [seachInputValue, setSeachInputValue] = useState("");
@@ -29,7 +25,7 @@ export default function HomePage() {
     dispatch(setPage("home"));
   }, [dispatch, page]);
 
-  const goVote = (item: IQuestion) => {
+  const goVote = (item: IQuestions) => {
     dispatch(setQuestion(item.question));
     dispatch(setOptions(item.options));
     createVotingBlock(optionsArr, toShowPercentage, toShowResult);
@@ -79,9 +75,9 @@ export default function HomePage() {
 
 //handle the correct execution of questions on the page based on the search input
 function isHighlightedQuestionItems(
-  item: IQuestion,
+  item: IQuestions,
   seachInputValue: string,
-  goVoteFn: (item: IQuestion) => void
+  goVoteFn: (item: IQuestions) => void
 ) {
   const regex = new RegExp(`(${seachInputValue})`, "gi"); // global, case insensitive
   const partsArr = item.question.split(regex);
@@ -99,6 +95,7 @@ function isHighlightedQuestionItems(
             )
           )
         : item.question}
+      <span className="pop_up">{item.totalClicks} people voted</span>
     </li>
   );
 }
