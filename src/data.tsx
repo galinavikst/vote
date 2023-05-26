@@ -196,6 +196,76 @@ export const allClients = [
         votedOption: -1,
         totalClicks: 25,
       },
+      {
+        id: "What's your favorite office fashion statement?",
+        question: "What's your favorite office fashion statement?",
+        options: [
+          {
+            id: " Socks with sandals - breaking all fashion norms in the name of comfort.",
+            color: "#f0e46f",
+            text: " Socks with sandals - breaking all fashion norms in the name of comfort.",
+            clicked: 4,
+          },
+          {
+            id: "Hawaiian shirt Fridays - bringing the tropical vibes to the workplace.",
+            color: "#b8f46f",
+            text: "Hawaiian shirt Fridays - bringing the tropical vibes to the workplace.",
+            clicked: 7,
+          },
+          {
+            id: " Pajama bottoms hidden under professional attire - business on top, cozy on the bottom.",
+            color: "#dc54e1",
+            text: " Pajama bottoms hidden under professional attire - business on top, cozy on the bottom.",
+            clicked: 7,
+          },
+          {
+            id: "Other",
+            color: "#7b8c56",
+            text: "Other",
+            clicked: 3,
+          },
+        ],
+        votedOption: -1,
+        totalClicks: 21,
+      },
+      {
+        id: "If you were a superhero, what would your superpower be?",
+        question: "If you were a superhero, what would your superpower be?",
+        options: [
+          {
+            id: "The ability to make any food appear instantly.",
+            color: "#f0e46f",
+            text: "The ability to make any food appear instantly.",
+            clicked: 10,
+          },
+          {
+            id: "Teleportation - no more traffic or long commutes!",
+            color: "#b8f46f",
+            text: "Teleportation - no more traffic or long commutes!",
+            clicked: 7,
+          },
+          {
+            id: "The superpower of always being able to find a Wi-Fi signal, no matter where you are.",
+            color: "#dc54e1",
+            text: "The superpower of always being able to find a Wi-Fi signal, no matter where you are.",
+            clicked: 15,
+          },
+          {
+            id: "The ability to always find the perfect parking spot, even in the busiest areas.",
+            color: "#7e3c56",
+            text: "The ability to always find the perfect parking spot, even in the busiest areas.",
+            clicked: 5,
+          },
+          {
+            id: "Other",
+            color: "#7f8c56",
+            text: "Other",
+            clicked: 3,
+          },
+        ],
+        votedOption: -1,
+        totalClicks: 40,
+      },
     ],
   },
 ];
