@@ -1,5 +1,5 @@
 import React from "react";
-import { IOption } from "../store/optionsFormSlice";
+import { IOption } from "../data";
 
 const VoteBlockHeight = 350;
 
